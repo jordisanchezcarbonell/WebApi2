@@ -1,0 +1,62 @@
+
+INSERT INTO [ProyectoBDJordi].[dbo].[Entidad] (nombre,Correo_presidente,correo,contrasenya,temporada,direccion,Nombre_Presi,nif,Apellido)
+VALUES ('FB BARCELONA','TEST@test.com','TEST@test.com','1234','2019','carrer test','test','s223213213','test');
+
+
+
+
+INSERT INTO [ProyectoBDJordi].[dbo].Categoria_edad(nombre)
+VALUES ('test');
+
+
+INSERT INTO [ProyectoBDJordi].[dbo].[Competicion](nombre)
+VALUES ('test');
+
+INSERT INTO [ProyectoBDJordi].[dbo].[Deportes](nombre)
+VALUES ('test');
+
+
+INSERT INTO [ProyectoBDJordi].[dbo].[Sexo](nombre)
+VALUES ('Hombre');
+
+INSERT INTO [ProyectoBDJordi].[dbo].[Sexo](nombre)
+VALUES ('Mujer');
+
+INSERT INTO [ProyectoBDJordi].[dbo].[Sexo](nombre)
+VALUES ('Mixto');
+
+INSERT INTO [ProyectoBDJordi].[dbo].[Sexo](nombre)
+VALUES ('Otros');
+
+INSERT INTO [ProyectoBDJordi].[dbo].Equipo(nombre,id_entidad,id_sport,id_competicion,id_categoria_edad,id_nivel,id_sexo)
+VALUES ('FB BARCELONA','10','1','2','1','1','1');
+
+
+  INSERT INTO [ProyectoBDJordi].[dbo].[Tipo_gestion](nombre)
+VALUES ('Privado');
+  INSERT INTO [ProyectoBDJordi].[dbo].[Tipo_gestion](nombre)
+VALUES ('Publico');
+
+
+
+
+INSERT INTO [ProyectoBDJordi].[dbo].[Instalacion](nombre,direccion,id_tipo_gestion)
+VALUES ('Gali','Calle falsa 123','1');
+
+
+
+
+
+INSERT INTO [ProyectoBDJordi].[dbo].[Espacio](
+nombre,precio,exterior,id_instalacion)
+VALUES ('test','1','1','2');
+
+
+  INSERT INTO [ProyectoBDJordi].[dbo].[Act_demandadas](
+nombre,id_tipo,id_espacio,id_equipo,durada,dias,asignada)
+VALUES ('test','1','2','14','1','1','0');
+
+
+
+INSERT INTO [ProyectoBDJordi].[dbo].[Act_concedida](nombre,id_espacio,id_tipo,id_equipo,id_act_demandadas,id_usuario)
+VALUES ('Publico','1','1','1','1','1');
