@@ -228,7 +228,10 @@
       <DependentUpon>ModelEntiEspai.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Act_concedidaController.cs" />
+    <Compile Include="Controllers\EquipoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InstalacionsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Deportes.cs">
       <DependentUpon>ModelEntiEspai.tt</DependentUpon>
