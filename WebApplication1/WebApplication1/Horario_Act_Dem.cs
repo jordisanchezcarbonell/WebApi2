@@ -15,7 +15,7 @@ namespace WebApplication1
     public partial class Horario_Act_Dem
     {
         public int id { get; set; }
-        public int id_Act_Demandada { get; set; }
+        public Nullable<int> id_Act_Demandada { get; set; }
         public int id_dia_semana { get; set; }
         public System.TimeSpan hora_inicio { get; set; }
         public System.TimeSpan hora_final { get; set; }

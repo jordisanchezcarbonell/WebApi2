@@ -15,7 +15,7 @@ namespace WebApplication1
     public partial class Telefonos
     {
         public int id { get; set; }
-        public int telefono { get; set; }
+        public string telefono { get; set; }
         public string razon { get; set; }
         public int id_entidad { get; set; }
     

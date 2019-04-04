@@ -25,7 +25,7 @@ namespace WebApplication1
         public string nombre { get; set; }
         public int id_tipo { get; set; }
         public int id_espacio { get; set; }
-        public int id_equipo { get; set; }
+        public Nullable<int> id_equipo { get; set; }
         public double durada { get; set; }
         public int dias { get; set; }
         public bool asignada { get; set; }
@@ -34,7 +34,7 @@ namespace WebApplication1
         public virtual ICollection<Act_concedida> Act_concedida { get; set; }
         public virtual Equipo Equipo { get; set; }
         public virtual Espacio Espacio { get; set; }
-        public virtual Tipo_Actitivades Tipo_Actitivades { get; set; }
+        public virtual Tipo_Actividades Tipo_Actividades { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Horario_Act_Dem> Horario_Act_Dem { get; set; }
     }

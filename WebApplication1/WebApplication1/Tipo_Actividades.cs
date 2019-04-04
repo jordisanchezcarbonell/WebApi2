@@ -12,10 +12,10 @@ namespace WebApplication1
     using System;
     using System.Collections.Generic;
     
-    public partial class Tipo_Actitivades
+    public partial class Tipo_Actividades
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Tipo_Actitivades()
+        public Tipo_Actividades()
         {
             this.Act_concedida = new HashSet<Act_concedida>();
             this.Act_demandadas = new HashSet<Act_demandadas>();

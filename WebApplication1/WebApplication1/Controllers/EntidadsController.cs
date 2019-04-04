@@ -13,59 +13,57 @@ using WebApplication1;
 
 namespace WebApplication1.Controllers
 {
-    public class InstalacionsController : ApiController
+    public class EntidadsController : ApiController
     {
-        String mensaje ="";
         private ProyectoBDJordiEntities1 db = new ProyectoBDJordiEntities1();
 
-        // GET: api/Instalacions
-        public IQueryable<Instalacion> GetInstalacion()
+        String mensaje = "";
+        // GET: api/Entidads
+        public IQueryable<Entidad> GetEntidad()
         {
-            //Evito que em retorni tots els objectes enllaçats:
             db.Configuration.LazyLoadingEnabled = false;
 
-            return db.Instalacion;
+            return db.Entidad;
         }
 
-        // GET: api/Instalacions/5
-        [ResponseType(typeof(Instalacion))]
-        public IHttpActionResult GetInstalacion(int id)
+        // GET: api/Entidads/5
+        [ResponseType(typeof(Entidad))]
+        public IHttpActionResult GetEntidad(int id)
         {
-            //Evito que em retorni tots els objectes enllaçats:
             db.Configuration.LazyLoadingEnabled = false;
 
-            Instalacion instalacion = db.Instalacion.Find(id);
-            if (instalacion == null)
+            Entidad entidad = db.Entidad.Find(id);
+            if (entidad == null)
             {
                 return NotFound();
             }
 
-            return Ok(instalacion);
+            return Ok(entidad);
         }
 
-        // PUT: api/Instalacions/5
+        // PUT: api/Entidads/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutInstalacion(int id, Instalacion instalacion)
+        public IHttpActionResult PutEntidad(int id, Entidad entidad)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != instalacion.id)
+            if (id != entidad.id)
             {
                 return BadRequest();
             }
 
-            db.Entry(instalacion).State = EntityState.Modified;
+            db.Entry(entidad).State = EntityState.Modified;
 
             try
             {
                 db.SaveChanges();
             }
-            catch (DbUpdateConcurrencyException ex )
+            catch (DbUpdateConcurrencyException)
             {
-                if (!InstalacionExists(id))
+                if (!EntidadExists(id))
                 {
                     return NotFound();
                 }
@@ -82,20 +80,19 @@ namespace WebApplication1.Controllers
                 mensaje = Utilidades.Utilitats.MensajeError(sqlEx);
                 return BadRequest(mensaje);
             }
-
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Instalacions
-        [ResponseType(typeof(Instalacion))]
-        public IHttpActionResult PostInstalacion(Instalacion instalacion)
+        // POST: api/Entidads
+        [ResponseType(typeof(Entidad))]
+        public IHttpActionResult PostEntidad(Entidad entidad)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Instalacion.Add(instalacion);
+            db.Entidad.Add(entidad);
             try
             {
 
@@ -107,21 +104,20 @@ namespace WebApplication1.Controllers
                 mensaje = Utilidades.Utilitats.MensajeError(sqlEx);
                 return BadRequest(mensaje);
             }
-
-            return CreatedAtRoute("DefaultApi", new { id = instalacion.id }, instalacion);
+            return CreatedAtRoute("DefaultApi", new { id = entidad.id }, entidad);
         }
 
-        // DELETE: api/Instalacions/5
-        [ResponseType(typeof(Instalacion))]
-        public IHttpActionResult DeleteInstalacion(int id)
+        // DELETE: api/Entidads/5
+        [ResponseType(typeof(Entidad))]
+        public IHttpActionResult DeleteEntidad(int id)
         {
-            Instalacion instalacion = db.Instalacion.Find(id);
-            if (instalacion == null)
+            Entidad entidad = db.Entidad.Find(id);
+            if (entidad == null)
             {
                 return NotFound();
             }
 
-            db.Instalacion.Remove(instalacion);
+            db.Entidad.Remove(entidad);
             try
             {
 
@@ -133,8 +129,7 @@ namespace WebApplication1.Controllers
                 mensaje = Utilidades.Utilitats.MensajeError(sqlEx);
                 return BadRequest(mensaje);
             }
-
-            return Ok(instalacion);
+            return Ok(entidad);
         }
 
         protected override void Dispose(bool disposing)
@@ -146,9 +141,9 @@ namespace WebApplication1.Controllers
             base.Dispose(disposing);
         }
 
-        private bool InstalacionExists(int id)
+        private bool EntidadExists(int id)
         {
-            return db.Instalacion.Count(e => e.id == id) > 0;
+            return db.Entidad.Count(e => e.id == id) > 0;
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -14,7 +15,8 @@ namespace WebApplication1.Controllers
 {
     public class Act_concedidaController : ApiController
     {
-        private ProyectoBDJordiEntities db = new ProyectoBDJordiEntities();
+        String mensaje = "";
+        private ProyectoBDJordiEntities1 db = new ProyectoBDJordiEntities1();
 
         // GET: api/Act_concedida
         public IQueryable<Act_concedida> GetAct_concedida()
@@ -61,7 +63,7 @@ namespace WebApplication1.Controllers
             {
                 db.SaveChanges();
             }
-            catch (DbUpdateConcurrencyException)
+            catch (DbUpdateConcurrencyException ex )
             {
                 if (!Act_concedidaExists(id))
                 {
@@ -69,9 +71,18 @@ namespace WebApplication1.Controllers
                 }
                 else
                 {
-                    throw;
+                    SqlException sqlEx = (SqlException)ex.InnerException.InnerException;
+                    mensaje = Utilidades.Utilitats.MensajeError(sqlEx);
+                    return BadRequest(mensaje);
                 }
             }
+            catch (DbUpdateException ex)
+            {
+                SqlException sqlEx = (SqlException)ex.InnerException.InnerException;
+                mensaje = Utilidades.Utilitats.MensajeError(sqlEx);
+                return BadRequest(mensaje);
+            }
+
 
             return StatusCode(HttpStatusCode.NoContent);
         }
@@ -86,7 +97,17 @@ namespace WebApplication1.Controllers
             }
 
             db.Act_concedida.Add(act_concedida);
-            db.SaveChanges();
+            try
+            {
+
+                db.SaveChanges();
+            }
+            catch (DbUpdateException ex)
+            {
+                SqlException sqlEx = (SqlException)ex.InnerException.InnerException;
+                mensaje = Utilidades.Utilitats.MensajeError(sqlEx);
+                return BadRequest(mensaje);
+            }
 
             return CreatedAtRoute("DefaultApi", new { id = act_concedida.id }, act_concedida);
         }
@@ -102,7 +123,17 @@ namespace WebApplication1.Controllers
             }
 
             db.Act_concedida.Remove(act_concedida);
-            db.SaveChanges();
+            try
+            {
+
+                db.SaveChanges();
+            }
+            catch (DbUpdateException ex)
+            {
+                SqlException sqlEx = (SqlException)ex.InnerException.InnerException;
+                mensaje = Utilidades.Utilitats.MensajeError(sqlEx);
+                return BadRequest(mensaje);
+            }
 
             return Ok(act_concedida);
         }

@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f95492f4835a47d1a19de97ebdd46e3c" Name="Diagram1" ZoomLevel="77">
+      <Diagram DiagramId="aa9c665d1322470eb71f868b571663f0" Name="Diagram1">
         <EntityTypeShape EntityType="ProyectoBDJordiModel.Act_concedida" Width="1.5" PointX="5.25" PointY="4.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoBDJordiModel.Act_demandadas" Width="1.5" PointX="8.25" PointY="4.875" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoBDJordiModel.Admin" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
@@ -14,7 +14,7 @@
         <EntityTypeShape EntityType="ProyectoBDJordiModel.Competicion" Width="1.5" PointX="0.75" PointY="11.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoBDJordiModel.Deportes" Width="1.5" PointX="0.75" PointY="14.125" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoBDJordiModel.Dias_Semana" Width="1.5" PointX="8.25" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProyectoBDJordiModel.Entidad" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoBDJordiModel.Entidad" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoBDJordiModel.Equipo" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoBDJordiModel.Espacio" Width="1.5" PointX="6" PointY="19" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoBDJordiModel.Horario_Act_Con" Width="1.5" PointX="10.5" PointY="5.375" IsExpanded="true" />
@@ -23,7 +23,7 @@
         <EntityTypeShape EntityType="ProyectoBDJordiModel.Instalacion_Horario" Width="1.5" PointX="10.5" PointY="10.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoBDJordiModel.Sexo" Width="1.5" PointX="0.75" PointY="16.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoBDJordiModel.Telefonos" Width="1.5" PointX="3" PointY="10.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProyectoBDJordiModel.Tipo_Actitivades" Width="1.5" PointX="6" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoBDJordiModel.Tipo_Actividades" Width="1.5" PointX="6" PointY="9.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoBDJordiModel.Tipo_gestion" Width="1.5" PointX="1.5" PointY="19.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ProyectoBDJordiModel.Usuario" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
         <AssociationConnector Association="ProyectoBDJordiModel.FK_Act_concedida_Act_demandadas" ManuallyRouted="false" />

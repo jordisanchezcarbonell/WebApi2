@@ -15,10 +15,10 @@ namespace WebApplication1
     public partial class Instalacion_Horario
     {
         public int id { get; set; }
-        public int id_instalacion { get; set; }
+        public Nullable<int> id_instalacion { get; set; }
         public int id_dia_semana { get; set; }
-        public System.TimeSpan hora_inicio { get; set; }
-        public System.TimeSpan hora_final { get; set; }
+        public System.DateTime hora_inicio { get; set; }
+        public System.DateTime hora_final { get; set; }
     
         public virtual Dias_Semana Dias_Semana { get; set; }
         public virtual Instalacion Instalacion { get; set; }

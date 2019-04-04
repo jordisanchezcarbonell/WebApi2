@@ -27,10 +27,7 @@ namespace WebApplication1
         public string contrasenya { get; set; }
         public int temporada { get; set; }
         public string direccion { get; set; }
-        public string Nombre_Presi { get; set; }
         public string nif { get; set; }
-        public string Apellido { get; set; }
-        public string Correo_presidente { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Equipo> Equipo { get; set; }

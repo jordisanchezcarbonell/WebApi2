@@ -9,13 +9,24 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using WebApplication1;
-
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
+using System.Web.Http.Description;
 namespace WebApplication1.Controllers
 {
     public class EquipoController : ApiController
     {
-        private ProyectoBDJordiEntities db = new ProyectoBDJordiEntities();
+        private ProyectoBDJordiEntities1 db = new ProyectoBDJordiEntities1();
 
+        String mensaje = "";
         // GET: api/Equipo
         public IQueryable<Equipo> GetEquipo()
         {
@@ -61,7 +72,7 @@ namespace WebApplication1.Controllers
             {
                 db.SaveChanges();
             }
-            catch (DbUpdateConcurrencyException)
+            catch (DbUpdateConcurrencyException ex)
             {
                 if (!EquipoExists(id))
                 {
@@ -69,8 +80,17 @@ namespace WebApplication1.Controllers
                 }
                 else
                 {
-                    throw;
+
+                    SqlException sqlEx = (SqlException)ex.InnerException.InnerException;
+                    mensaje = Utilidades.Utilitats.MensajeError(sqlEx);
+                    return BadRequest(mensaje);
                 }
+            }
+            catch(DbUpdateException ex)
+            {
+                SqlException sqlEx = (SqlException)ex.InnerException.InnerException;
+                   mensaje = Utilidades.Utilitats.MensajeError(sqlEx);
+                return BadRequest(mensaje);
             }
 
             return StatusCode(HttpStatusCode.NoContent);
@@ -86,7 +106,18 @@ namespace WebApplication1.Controllers
             }
 
             db.Equipo.Add(equipo);
-            db.SaveChanges();
+            try
+            {
+
+                db.SaveChanges();
+            }
+            catch (DbUpdateException ex)
+            {
+                SqlException sqlEx = (SqlException)ex.InnerException.InnerException;
+                mensaje = Utilidades.Utilitats.MensajeError(sqlEx);
+                return BadRequest(mensaje);
+            }
+
 
             return CreatedAtRoute("DefaultApi", new { id = equipo.id }, equipo);
         }
@@ -102,7 +133,17 @@ namespace WebApplication1.Controllers
             }
 
             db.Equipo.Remove(equipo);
-            db.SaveChanges();
+            try
+            {
+
+                db.SaveChanges();
+            }
+            catch (DbUpdateException ex)
+            {
+                SqlException sqlEx = (SqlException)ex.InnerException.InnerException;
+                mensaje = Utilidades.Utilitats.MensajeError(sqlEx);
+                return BadRequest(mensaje);
+            }
 
             return Ok(equipo);
         }

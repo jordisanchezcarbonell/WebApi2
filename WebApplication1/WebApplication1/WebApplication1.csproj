@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -173,13 +174,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Act_concedida.cs">
-      <DependentUpon>ModelEntiEspai.tt</DependentUpon>
+      <DependentUpon>ModelBaseDatos.tt</DependentUpon>
     </Compile>
     <Compile Include="Act_demandadas.cs">
-      <DependentUpon>ModelEntiEspai.tt</DependentUpon>
+      <DependentUpon>ModelBaseDatos.tt</DependentUpon>
     </Compile>
     <Compile Include="Admin.cs">
-      <DependentUpon>ModelEntiEspai.tt</DependentUpon>
+      <DependentUpon>ModelBaseDatos.tt</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -216,67 +217,68 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Categoria.cs">
-      <DependentUpon>ModelEntiEspai.tt</DependentUpon>
+      <DependentUpon>ModelBaseDatos.tt</DependentUpon>
     </Compile>
     <Compile Include="Categoria_edad.cs">
-      <DependentUpon>ModelEntiEspai.tt</DependentUpon>
+      <DependentUpon>ModelBaseDatos.tt</DependentUpon>
     </Compile>
     <Compile Include="Categoria_Edat.cs">
-      <DependentUpon>ModelEntiEspai.tt</DependentUpon>
+      <DependentUpon>ModelBaseDatos.tt</DependentUpon>
     </Compile>
     <Compile Include="Competicion.cs">
-      <DependentUpon>ModelEntiEspai.tt</DependentUpon>
+      <DependentUpon>ModelBaseDatos.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Act_concedidaController.cs" />
+    <Compile Include="Controllers\EntidadsController.cs" />
     <Compile Include="Controllers\EquipoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstalacionsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Deportes.cs">
-      <DependentUpon>ModelEntiEspai.tt</DependentUpon>
+      <DependentUpon>ModelBaseDatos.tt</DependentUpon>
     </Compile>
     <Compile Include="Dias_Semana.cs">
-      <DependentUpon>ModelEntiEspai.tt</DependentUpon>
+      <DependentUpon>ModelBaseDatos.tt</DependentUpon>
     </Compile>
     <Compile Include="Entidad.cs">
-      <DependentUpon>ModelEntiEspai.tt</DependentUpon>
+      <DependentUpon>ModelBaseDatos.tt</DependentUpon>
     </Compile>
     <Compile Include="Equipo.cs">
-      <DependentUpon>ModelEntiEspai.tt</DependentUpon>
+      <DependentUpon>ModelBaseDatos.tt</DependentUpon>
     </Compile>
     <Compile Include="Espacio.cs">
-      <DependentUpon>ModelEntiEspai.tt</DependentUpon>
+      <DependentUpon>ModelBaseDatos.tt</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Horario_Act_Con.cs">
-      <DependentUpon>ModelEntiEspai.tt</DependentUpon>
+      <DependentUpon>ModelBaseDatos.tt</DependentUpon>
     </Compile>
     <Compile Include="Horario_Act_Dem.cs">
-      <DependentUpon>ModelEntiEspai.tt</DependentUpon>
+      <DependentUpon>ModelBaseDatos.tt</DependentUpon>
     </Compile>
     <Compile Include="Instalacion.cs">
-      <DependentUpon>ModelEntiEspai.tt</DependentUpon>
+      <DependentUpon>ModelBaseDatos.tt</DependentUpon>
     </Compile>
     <Compile Include="Instalacion_Horario.cs">
-      <DependentUpon>ModelEntiEspai.tt</DependentUpon>
+      <DependentUpon>ModelBaseDatos.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelEntiEspai.Context.cs">
+    <Compile Include="ModelBaseDatos.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelEntiEspai.Context.tt</DependentUpon>
+      <DependentUpon>ModelBaseDatos.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelEntiEspai.cs">
+    <Compile Include="ModelBaseDatos.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelEntiEspai.tt</DependentUpon>
+      <DependentUpon>ModelBaseDatos.tt</DependentUpon>
     </Compile>
-    <Compile Include="ModelEntiEspai.Designer.cs">
+    <Compile Include="ModelBaseDatos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelEntiEspai.edmx</DependentUpon>
+      <DependentUpon>ModelBaseDatos.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -285,21 +287,22 @@
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
     <Compile Include="Sexo.cs">
-      <DependentUpon>ModelEntiEspai.tt</DependentUpon>
+      <DependentUpon>ModelBaseDatos.tt</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="Telefonos.cs">
-      <DependentUpon>ModelEntiEspai.tt</DependentUpon>
+      <DependentUpon>ModelBaseDatos.tt</DependentUpon>
     </Compile>
-    <Compile Include="Tipo_Actitivades.cs">
-      <DependentUpon>ModelEntiEspai.tt</DependentUpon>
+    <Compile Include="Tipo_Actividades.cs">
+      <DependentUpon>ModelBaseDatos.tt</DependentUpon>
     </Compile>
     <Compile Include="Tipo_gestion.cs">
-      <DependentUpon>ModelEntiEspai.tt</DependentUpon>
+      <DependentUpon>ModelBaseDatos.tt</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs">
-      <DependentUpon>ModelEntiEspai.tt</DependentUpon>
+      <DependentUpon>ModelBaseDatos.tt</DependentUpon>
     </Compile>
+    <Compile Include="Utilidades\Utilitats.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -308,15 +311,15 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="ModelEntiEspai.Context.tt">
+    <Content Include="ModelBaseDatos.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelEntiEspai.edmx</DependentUpon>
-      <LastGenOutput>ModelEntiEspai.Context.cs</LastGenOutput>
+      <DependentUpon>ModelBaseDatos.edmx</DependentUpon>
+      <LastGenOutput>ModelBaseDatos.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="ModelEntiEspai.tt">
+    <Content Include="ModelBaseDatos.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelEntiEspai.edmx</DependentUpon>
-      <LastGenOutput>ModelEntiEspai.cs</LastGenOutput>
+      <DependentUpon>ModelBaseDatos.edmx</DependentUpon>
+      <LastGenOutput>ModelBaseDatos.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -339,12 +342,12 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
-    <EntityDeploy Include="ModelEntiEspai.edmx">
+    <EntityDeploy Include="ModelBaseDatos.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelEntiEspai.Designer.cs</LastGenOutput>
+      <LastGenOutput>ModelBaseDatos.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="ModelEntiEspai.edmx.diagram">
-      <DependentUpon>ModelEntiEspai.edmx</DependentUpon>
+    <Content Include="ModelBaseDatos.edmx.diagram">
+      <DependentUpon>ModelBaseDatos.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

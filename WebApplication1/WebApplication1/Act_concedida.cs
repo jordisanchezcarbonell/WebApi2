@@ -23,7 +23,7 @@ namespace WebApplication1
         public int id { get; set; }
         public string nombre { get; set; }
         public int id_tipo { get; set; }
-        public int id_equipo { get; set; }
+        public Nullable<int> id_equipo { get; set; }
         public int id_act_demandadas { get; set; }
         public int id_usuario { get; set; }
         public int id_espacio { get; set; }
@@ -31,7 +31,7 @@ namespace WebApplication1
         public virtual Act_demandadas Act_demandadas { get; set; }
         public virtual Equipo Equipo { get; set; }
         public virtual Espacio Espacio { get; set; }
-        public virtual Tipo_Actitivades Tipo_Actitivades { get; set; }
+        public virtual Tipo_Actividades Tipo_Actividades { get; set; }
         public virtual Usuario Usuario { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Horario_Act_Con> Horario_Act_Con { get; set; }

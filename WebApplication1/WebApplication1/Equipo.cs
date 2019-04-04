@@ -23,12 +23,12 @@ namespace WebApplication1
     
         public int id { get; set; }
         public string nombre { get; set; }
-        public int id_sport { get; set; }
-        public int id_competicion { get; set; }
-        public int id_categoria_edad { get; set; }
-        public int id_nivel { get; set; }
-        public int id_sexo { get; set; }
-        public int id_entidad { get; set; }
+        public Nullable<int> id_sport { get; set; }
+        public Nullable<int> id_competicion { get; set; }
+        public Nullable<int> id_categoria_edad { get; set; }
+        public Nullable<int> id_nivel { get; set; }
+        public Nullable<int> id_sexo { get; set; }
+        public Nullable<int> id_entidad { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Act_concedida> Act_concedida { get; set; }
